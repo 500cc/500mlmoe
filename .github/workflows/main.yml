@@ -1,28 +1,31 @@
-name: Build 11ty Site
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [ master ]
-jobs:
-  build:
-    runs-on: ubuntu-latest
+    branches:
+      - master # デプロイのトリガーとなるブランチ
 
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
-          node-version: 16
+          node-version: 23
 
-      - name: Install Dependencies
+      - name: Install dependencies
         run: npm install
 
-      - name: Build 11ty Site
-        run: npm run build
+      - name: Build site
+        run: npm run build # 11ty のビルドコマンド (package.json に定義)
 
-      - name: Upload Artifacts
-        uses: actions/upload-artifact@v4
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
         with:
-          name: site
-          path: docs
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./docs # ビルドされたサイトのディレクトリ
+          publish_branch: gh-pages # デプロイ先のブランチ
