@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ title }} - 500mLのホームページ</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div id="container">
+    <aside id="sidebar">
+      <div>
+        {% include "./components/sidebar.njk" %}
+      </div>
+    </aside>
+    <div id="sidebarButton" onClick="toggleSidebar()">
+    <img src="/img/Hamburger_icon.svg"> 
+    </div>
+    <div id="content">
+      <h2>{{ title }}</h2>
+      {{ content | safe }}
+      {% include "./components/footer.njk" %}
+    </div>
+  </div>
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('content');
+    const sidebarButton = document.getElementById('sidebarButton');
+    let isCollapsed = false;
+
+    const toggleSidebar = () => {
+      sidebar.classList.toggle('collapsed');
+      content.classList.toggle('expanded');
+      sidebarButton.classList.toggle('collapsed');
+      isCollapsed = !isCollapsed;
+    };
+
+  </script>
+</body>
+</html>

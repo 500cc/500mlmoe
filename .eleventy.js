@@ -1,13 +1,15 @@
+const yaml = require("js-yaml");
+
 module.exports = function (eleventyConfig) {
-  // パススルーコピーの設定 (必要な場合)
+  eleventyConfig.addDataExtension("yml, yaml", (contents) => yaml.load(contents));
+
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
 
-  // 出力ディレクトリの設定
   return {
     dir: {
-      input: ".", // 入力ディレクトリ (通常はプロジェクトルート)
-      output: "docs", // 出力ディレクトリ (GitHub Pagesの推奨)
+      input: "src",
+      output: "docs",
     },
   };
 };

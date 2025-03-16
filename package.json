@@ -4,6 +4,7 @@
   "main": "index.js",
   "scripts": {
     "build": "eleventy",
+    "start": "eleventy --serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

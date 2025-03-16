@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>ポートフォリオ - 500mLのホームページ</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div id="container">
+    <aside id="sidebar">
+      <div>
+        <h2>500mL</h2>
+
+なんかいい画像を貼る
+
+<table width="100%">
+  <tbody>
+    <tr><td>コンテンツ</td></tr>
+    
+      <tr><td><a href=/about>自己紹介</a></td></tr>
+    
+      <tr><td><a href=/portfolio>ポートフォリオ</a></td></tr>
+    
+      <tr><td><a href=/gallery>絵とか</a></td></tr>
+    
+      <tr><td><a href=/games>ゲーム</a></td></tr>
+    
+  </tbody>
+</table>
+
+<table width="100%">
+  <tbody>
+    <tr><td>SNS</td></tr>
+    <tr><td>Twitter</td></tr>
+  </tbody>
+</table>
+      </div>
+    </aside>
+    <div id="sidebarButton" onClick="toggleSidebar()">
+    <img src="/img/Hamburger_icon.svg"> 
+    </div>
+    <div id="content">
+      <h2>ポートフォリオ</h2>
+      <div class="works-container" width="100%">
+  <div>#FindOurStars Vol.1</div>
+  <div>2021/06/21</div>
+  <div><img width="100%" src=/img/fos1.png></div>
+  <div><p class="works-desc">東大恋アス同好会会誌。1p漫画を描きました。</p></div>
+</div>
+<div class="works-container" width="100%">
+  <div>Micare Vol.1</div>
+  <div>2021/10/24</div>
+  <div><img width="100%" src=/img/micare1.jpg></div>
+  <div><p class="works-desc">東大きらら同好会会誌。編集長を担当。記事「初めてのきらら、どの作品がいいか」、きらきら☆スタディーのイラスト、音無さんは破壊神！の1p漫画を寄稿しました。</p></div>
+</div>
+<div class="works-container" width="100%">
+  <div>PANCHROMATIC</div>
+  <div>2021/12/30</div>
+  <div><img width="100%" src=/img/panchromatic.jpg></div>
+  <div><p class="works-desc">東大きらら同好会会誌。きららファンタジアの2p漫画を描きました。</p></div>
+</div>
+<div class="works-container" width="100%">
+  <div>Micare Vol.2</div>
+  <div>2022/08/13</div>
+  <div><img width="100%" src=/img/micare2.webp></div>
+  <div><p class="works-desc">東大きらら同好会会誌。編集長を担当。きららファンタジアの8p漫画を描きました。</p></div>
+</div>
+<div class="works-container" width="100%">
+  <div>結ぶ、束ねる。</div>
+  <div>2023/03/18</div>
+  <div><img width="100%" src=/img/musutaba.webp></div>
+  <div><p class="works-desc">東大きらら同好会会誌（ぼざろ本）。編集長を担当。ぼ喜多の8p漫画を描きました。</p></div>
+</div>
+<div class="works-container" width="100%">
+  <div>暴走アカデミズム</div>
+  <div>2023/11/25</div>
+  <div><img width="100%" src=/img/bousouacademism.png></div>
+  <div><p class="works-desc">東大きらら同好会会誌（妄想アカデミズム本）。編集長を担当。4p漫画を描きました。</p></div>
+</div>
+<div class="works-container" width="100%">
+  <div>煌 Vol.1</div>
+  <div>2024/05/02</div>
+  <div><img width="100%" src=/img/kirameki.jpg></div>
+  <div><p class="works-desc">阪大きらら同好会会誌。自分で書いたわけではないですが、記事「旧帝きら同座談会」に、東大きらら同好会メンバーとしてお話した内容が載っています。</p></div>
+</div>
+<div class="works-container" width="100%">
+  <div>篠澤広に物理学を解説してもらう合同</div>
+  <div>2024/12/14</div>
+  <div><img width="100%" src=/img/shinosawabutsuri.jpg></div>
+  <div><p class="works-desc">個人で企画した合同誌。主催を担当。量子力学のSSを書きました。</p></div>
+</div>
+
+      <hr />
+<div class="footer-container">
+    <p>© 2025 500mL All rights reserved.</p>
+    <a href="/">トップページに戻る</a>
+</div>
+    </div>
+  </div>
+  <script>
+    const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('content');
+    const sidebarButton = document.getElementById('sidebarButton');
+    let isCollapsed = false;
+
+    const toggleSidebar = () => {
+      sidebar.classList.toggle('collapsed');
+      content.classList.toggle('expanded');
+      sidebarButton.classList.toggle('collapsed');
+      isCollapsed = !isCollapsed;
+    };
+
+  </script>
+</body>
+</html>

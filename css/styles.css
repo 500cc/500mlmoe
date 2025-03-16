@@ -1,0 +1,95 @@
+body {
+  margin: 0;
+}
+
+#container {
+  display: flex;
+}
+
+#sidebar {
+  border-right: 3px double brown;
+  width: 13rem;
+  height: 100vh;
+  overflow-y: auto;
+  padding: 0.5rem;
+  position: fixed;
+  background-color: aliceblue;
+  transition: transform 0.3s ease-in-out;
+  transform: translateX(0);
+}
+
+#sidebar.collapsed {
+  transform: translateX(-14rem);
+}
+
+#content {
+  flex: 1;
+  padding: 5rem;
+  margin-left: 14rem;
+  transition: margin-left 0.3s ease-in-out;
+}
+
+#content.expanded {
+  margin-left: 0;
+}
+
+#sidebarButton {
+  padding: 1rem;
+  margin: 0.5rem;
+  margin-left: 14.5rem;
+  transition: margin-left 0.3s ease-in-out;
+  position: fixed;
+}
+
+#sidebarButton.collapsed {
+  margin-left: 0.5rem;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+
+.footer-container {
+  text-align: center;
+}
+
+.footer-container p {
+  font-size: 0.7rem;
+}
+
+tr {
+  text-align: center;
+}
+
+tr:first-child td {
+  border: 1px solid black;
+  background-color: bisque;
+}
+
+tr td {
+  background-color: pink;
+}
+
+.works-container {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 2rem;
+}
+
+.works-container div:nth-child(1) {
+  width: calc(100% - 10rem);
+}
+.works-container div:nth-child(2) {
+  text-align: center;
+  width: 10rem;
+}
+.works-container div:nth-child(3) {
+  width: 10rem;
+}
+.works-container div:nth-child(4) {
+  width: calc(100% - 10rem);
+}
+
+.works-desc {
+  margin: 1rem;
+}

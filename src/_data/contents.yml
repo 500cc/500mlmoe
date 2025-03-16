@@ -1,0 +1,13 @@
+contents:
+  - title: 自己紹介
+    url: /about
+    desc: 500mLの自己紹介だよ。
+  - title: ポートフォリオ
+    url: /portfolio
+    desc: 外部に発表したものとかを載せてるよ。
+  - title: 絵とか
+    url: /gallery
+    desc: 絵とか描いたらここに載せようかな。
+  - title: ゲーム
+    url: /games 
+    desc: いい個人サイトにはちょっとしたゲームがあるといいよね。
