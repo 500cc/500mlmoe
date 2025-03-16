@@ -2,12 +2,13 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>絵とか - 500mLのホームページ</title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
   <div id="container">
-    <aside id="sidebar">
+    <aside id="menu">
       <div>
         <h2>500mL</h2>
 
@@ -36,12 +37,12 @@
 </table>
       </div>
     </aside>
-    <div id="sidebarButton" onClick="toggleSidebar()">
+    <div id="menuButton">
     <img src="/img/Hamburger_icon.svg"> 
     </div>
     <div id="content">
       <h2>絵とか</h2>
-      <p>TBA</p>
+<p>TBA</p>
 
       <hr />
 <div class="footer-container">
@@ -51,18 +52,58 @@
     </div>
   </div>
   <script>
-    const sidebar = document.getElementById('sidebar');
-    const content = document.getElementById('content');
-    const sidebarButton = document.getElementById('sidebarButton');
-    let isCollapsed = false;
+    document.addEventListener('DOMContentLoaded', function() {
+      const menu = document.getElementById('menu');
+      const content = document.getElementById('content');
+      const menuButton = document.getElementById('menuButton');
 
-    const toggleSidebar = () => {
-      sidebar.classList.toggle('collapsed');
-      content.classList.toggle('expanded');
-      sidebarButton.classList.toggle('collapsed');
-      isCollapsed = !isCollapsed;
-    };
+      const menuOpen = sessionStorage.getItem('menuOpen');
 
+      let shouldOpen = true; // 初期値は開く
+
+      if (menuOpen !== null) {
+        shouldOpen = menuOpen === 'true';
+      }
+
+      menu.classList.add('no-animation');
+      content.classList.add('no-animation');
+      menuButton.classList.add('no-animation');
+
+    // メニューの状態に応じて表示を切り替える
+      if (shouldOpen) {
+        menu.classList.add('menuOpen');
+        content.classList.add('menuOpen');
+        menuButton.classList.add('menuOpen');
+      } else {
+        menu.classList.remove('menuOpen');
+        content.classList.remove('menuOpen');
+        menuButton.classList.remove('menuOpen');
+      }
+
+    // メニューボタンのクリックイベント
+      menuButton.addEventListener('click', function() {
+        menu.classList.remove('no-animation');
+        content.classList.remove('no-animation');
+        menuButton.classList.remove('no-animation');
+        // メニューの状態を反転
+        const currentMenuOpen = menu.classList.contains('menuOpen');
+        const newMenuOpen = !currentMenuOpen;
+
+      // メニューの状態に応じて表示を切り替える
+        if (newMenuOpen) {
+          menu.classList.add('menuOpen');
+          content.classList.add('menuOpen');
+          menuButton.classList.add('menuOpen');
+        } else {
+          menu.classList.remove('menuOpen');
+          content.classList.remove('menuOpen');
+          menuButton.classList.remove('menuOpen');
+        }
+
+        // sessionStorageにメニューの状態を保存
+        sessionStorage.setItem('menuOpen', newMenuOpen);
+      });
+    });
   </script>
 </body>
 </html>

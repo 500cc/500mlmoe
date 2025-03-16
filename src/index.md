@@ -1,6 +1,6 @@
 ---
 title: 500mLのホームページ
-layout: layouts/index.njk
+layout: layouts/base.njk
 ---
 
 # {{ title }}

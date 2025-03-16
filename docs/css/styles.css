@@ -6,7 +6,12 @@ body {
   display: flex;
 }
 
-#sidebar {
+.no-animation {
+  animation: none !important;
+  transition: none !important;
+}
+
+#menu {
   border-right: 3px double brown;
   width: 13rem;
   height: 100vh;
@@ -14,35 +19,35 @@ body {
   padding: 0.5rem;
   position: fixed;
   background-color: aliceblue;
+  transform: translateX(-14rem);
   transition: transform 0.3s ease-in-out;
-  transform: translateX(0);
 }
 
-#sidebar.collapsed {
-  transform: translateX(-14rem);
+#menu.menuOpen {
+  transform: translateX(0);
 }
 
 #content {
   flex: 1;
   padding: 5rem;
-  margin-left: 14rem;
+  margin-left: 0;
   transition: margin-left 0.3s ease-in-out;
 }
 
-#content.expanded {
-  margin-left: 0;
+#content.menuOpen {
+  margin-left: 14rem;
 }
 
-#sidebarButton {
+#menuButton {
   padding: 1rem;
   margin: 0.5rem;
-  margin-left: 14.5rem;
-  transition: margin-left 0.3s ease-in-out;
+  margin-left: 0.5rem;
   position: fixed;
+  transition: margin-left 0.3s ease-in-out;
 }
 
-#sidebarButton.collapsed {
-  margin-left: 0.5rem;
+#menuButton.menuOpen {
+  margin-left: 14.5rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
