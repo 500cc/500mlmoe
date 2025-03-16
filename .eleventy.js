@@ -7,7 +7,7 @@ module.exports = function (eleventyConfig) {
   return {
     dir: {
       input: ".", // 入力ディレクトリ (通常はプロジェクトルート)
-      output: "_site", // 出力ディレクトリ (GitHub Pagesの推奨)
+      output: "docs", // 出力ディレクトリ (GitHub Pagesの推奨)
     },
   };
 };
