@@ -29,7 +29,7 @@ body {
 
 #content {
   flex: 1;
-  padding: 5rem;
+  padding: 1rem;
   margin-left: 0;
   transition: margin-left 0.3s ease-in-out;
 }
