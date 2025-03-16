@@ -1,9 +1,9 @@
-name: Deploy to GitHub Pages
+name: Build 11ty Site
 
 on:
   push:
     branches:
-      - master # デプロイのトリガーとなるブランチ
+      - master
 
 jobs:
   deploy:
@@ -21,11 +21,4 @@ jobs:
         run: npm install
 
       - name: Build site
-        run: npm run build # 11ty のビルドコマンド (package.json に定義)
-
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./docs # ビルドされたサイトのディレクトリ
-          publish_branch: gh-pages # デプロイ先のブランチ
+        run: npm run build
