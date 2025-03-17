@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=0.8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>500mLのホームページ</title>
   <link rel="stylesheet" href="/css/styles.css">
 </head>
@@ -70,6 +70,29 @@
     </div>
   </div>
   <script>
+    function toggleMenu() {
+      menu.classList.remove('no-animation');
+      content.classList.remove('no-animation');
+      menuButton.classList.remove('no-animation');
+        // メニューの状態を反転
+      const currentMenuOpen = menu.classList.contains('menuOpen');
+      const newMenuOpen = !currentMenuOpen;
+
+      // メニューの状態に応じて表示を切り替える
+      if (newMenuOpen) {
+        menu.classList.add('menuOpen');
+        content.classList.add('menuOpen');
+        menuButton.classList.add('menuOpen');
+      } else {
+        menu.classList.remove('menuOpen');
+        content.classList.remove('menuOpen');
+        menuButton.classList.remove('menuOpen');
+      }
+       // sessionStorageにメニューの状態を保存
+      sessionStorage.setItem('menuOpen', newMenuOpen);
+      console.log("togglemenu")
+    }
+
     document.addEventListener('DOMContentLoaded', function() {
       const menu = document.getElementById('menu');
       const content = document.getElementById('content');
@@ -99,29 +122,17 @@
       }
 
     // メニューボタンのクリックイベント
-      menuButton.addEventListener('click', function() {
-        menu.classList.remove('no-animation');
-        content.classList.remove('no-animation');
-        menuButton.classList.remove('no-animation');
-        // メニューの状態を反転
-        const currentMenuOpen = menu.classList.contains('menuOpen');
-        const newMenuOpen = !currentMenuOpen;
-
-      // メニューの状態に応じて表示を切り替える
-        if (newMenuOpen) {
-          menu.classList.add('menuOpen');
-          content.classList.add('menuOpen');
-          menuButton.classList.add('menuOpen');
-        } else {
-          menu.classList.remove('menuOpen');
-          content.classList.remove('menuOpen');
-          menuButton.classList.remove('menuOpen');
-        }
-
-        // sessionStorageにメニューの状態を保存
-        sessionStorage.setItem('menuOpen', newMenuOpen);
-      });
+      menuButton.addEventListener('click', toggleMenu);
     });
+
+    window.onload = function(){
+      if (window.innerWidth <= 768) {
+        const menuOpen = sessionStorage.getItem('menuOpen');
+        if (menuOpen === 'true'){
+          toggleMenu();
+        }
+      }
+    };
   </script>
 </body>
 </html>
