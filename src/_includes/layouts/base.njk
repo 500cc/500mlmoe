@@ -41,7 +41,7 @@
       localStorage.setItem('menuOpen', newMenuOpen);
     }
 
-    window.addEventListener('DOMContentLoaded', () => {
+    function initMenu() {
       const menu = document.getElementById('menu');
       const content = document.getElementById('content');
       const menuButton = document.getElementById('menuButton');
@@ -58,7 +58,6 @@
       content.classList.add('no-animation');
       menuButton.classList.add('no-animation');
 
-  // メニューの状態に応じて表示を切り替える
       if (shouldOpen) {
         menu.classList.add('menuOpen');
         content.classList.add('menuOpen');
@@ -69,16 +68,13 @@
         menuButton.classList.remove('menuOpen');
       }
 
-  // メニューボタンのクリックイベント
       menuButton.addEventListener('click', toggleMenu);
 
-      console.log("initMenu")
       setTimeout(() => {
         menu.classList.remove('no-animation');
         content.classList.remove('no-animation');
         menuButton.classList.remove('no-animation');
         if (window.innerWidth <= 768) {
-          console.log("smartphone menu");
           const menuOpen = localStorage.getItem('menuOpen');
           console.log(menuOpen);
           if (menuOpen === 'true'){
@@ -86,6 +82,13 @@
           }
         }
       }, 10);
+    }
+
+    window.addEventListener('DOMContentLoaded', initMenu);
+    window.addEventListener('pageshow', (event) => {
+      if (event.persisted) {
+        initMenu();
+      }
     });
   </script>
 </body>
