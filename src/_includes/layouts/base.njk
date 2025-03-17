@@ -52,7 +52,7 @@
 
       const menuOpen = sessionStorage.getItem('menuOpen');
 
-      let shouldOpen = true;
+      let shouldOpen = window.innerWidth > 768;
 
       if (menuOpen !== null) {
         shouldOpen = menuOpen === 'true';
