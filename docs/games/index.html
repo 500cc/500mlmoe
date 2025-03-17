@@ -71,7 +71,7 @@
       localStorage.setItem('menuOpen', newMenuOpen);
     }
 
-    window.addEventListener('load', () => {
+    window.addEventListener('DOMContentLoaded', () => {
       const menu = document.getElementById('menu');
       const content = document.getElementById('content');
       const menuButton = document.getElementById('menuButton');
