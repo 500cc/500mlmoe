@@ -41,6 +41,7 @@ body {
 @media screen and (max-width: 768px) {
   #content {
     padding: 1rem;
+    padding-top: 2.5rem;
   }
 
   #content.menuOpen {
