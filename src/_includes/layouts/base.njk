@@ -40,8 +40,8 @@
         content.classList.remove('menuOpen');
         menuButton.classList.remove('menuOpen');
       }
-       // sessionStorageにメニューの状態を保存
-      sessionStorage.setItem('menuOpen', newMenuOpen);
+       // localStorageにメニューの状態を保存
+      localStorage.setItem('menuOpen', newMenuOpen);
       console.log("togglemenu")
     }
 
@@ -50,7 +50,7 @@
       const content = document.getElementById('content');
       const menuButton = document.getElementById('menuButton');
 
-      const menuOpen = sessionStorage.getItem('menuOpen');
+      const menuOpen = localStorage.getItem('menuOpen');
 
       let shouldOpen = window.innerWidth > 768;
 
@@ -79,7 +79,7 @@
 
     window.onload = function(){
       if (window.innerWidth <= 768) {
-        const menuOpen = sessionStorage.getItem('menuOpen');
+        const menuOpen = localStorage.getItem('menuOpen');
         if (menuOpen === 'true'){
           toggleMenu();
         }
