@@ -38,6 +38,12 @@ body {
   margin-left: 14rem;
 }
 
+@media screen and (max-width: 768px) {
+  #content {
+    margin-left: 0 !important;
+  }
+}
+
 #menuButton {
   padding: 1rem;
   margin: 0.5rem;
