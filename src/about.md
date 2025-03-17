@@ -4,3 +4,5 @@ layout: layouts/base.njk
 ---
 
 ## {{ title }}
+
+ごひゃだよ
