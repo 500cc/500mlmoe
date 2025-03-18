@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ポートフォリオ - 500mLのホームページ</title>
-  <link rel="stylesheet" href="/css/styles.css">
+  
+    <title>ポートフォリオ - 500mLのホームページ</title>
+  
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <div id="container">
     <aside id="menu">
       <div>
-        <h2>500mL</h2>
+        <h2 class="align-center">500mL</h2>
 
 <a href="/"><img width="100%" src="/img/gohya_syoumeisyasin.png"></a>
 
@@ -25,6 +27,8 @@
       <tr><td><a href=/gallery>絵とか</a></td></tr>
     
       <tr><td><a href=/games>ゲーム</a></td></tr>
+    
+      <tr><td><a href=/blog>ブログ</a></td></tr>
     
   </tbody>
 </table>
@@ -41,8 +45,10 @@
     <img src="/img/Hamburger_icon.svg"> 
     </div>
     <div id="content">
-      <h2>ポートフォリオ</h2>
-<div class="works-container" width="100%">
+      
+        <h2 class="align-center">ポートフォリオ</h2>
+      
+      <div class="works-container" width="100%">
   <div>#FindOurStars Vol.1</div>
   <div>2021/06/21</div>
   <div><img width="100%" src=/img/fos1.png></div>
@@ -91,11 +97,13 @@
   <div><p class="works-desc">個人で企画した合同誌。主催を担当。量子力学のSSを書きました。</p></div>
 </div>
 
-      <hr />
+      
+        <hr />
 <div class="footer-container">
     <p>© 2025 500mL All rights reserved.</p>
     <a href="/">トップページに戻る</a>
 </div>
+      
     </div>
   </div>
   <script>
@@ -104,7 +112,6 @@
       const currentMenuOpen = menu.classList.contains('menuOpen');
       const newMenuOpen = !currentMenuOpen;
 
-      // メニューの状態に応じて表示を切り替える
       if (newMenuOpen) {
         menu.classList.add('menuOpen');
         content.classList.add('menuOpen');

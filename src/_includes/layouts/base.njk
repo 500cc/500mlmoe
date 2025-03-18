@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>{{ title | pageTitle(site.title) }}</title>
-  <link rel="stylesheet" href="/css/styles.css">
+  {% block pageTitle %}
+    <title>{{ title }} - 500mLのホームページ</title>
+  {% endblock %}
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <div id="container">
@@ -17,8 +19,13 @@
     <img src="/img/Hamburger_icon.svg"> 
     </div>
     <div id="content">
+      {% block title %}
+        <h2 class="align-center">{{ title }}</h2>
+      {% endblock %}
       {{ content | safe }}
-      {% include "./components/footer.njk" %}
+      {% block footer %}
+        {% include "./components/footer.njk" %}
+      {% endblock %}
     </div>
   </div>
   <script>
@@ -27,7 +34,6 @@
       const currentMenuOpen = menu.classList.contains('menuOpen');
       const newMenuOpen = !currentMenuOpen;
 
-      // メニューの状態に応じて表示を切り替える
       if (newMenuOpen) {
         menu.classList.add('menuOpen');
         content.classList.add('menuOpen');

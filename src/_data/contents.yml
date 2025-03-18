@@ -11,3 +11,6 @@ contents:
   - title: ゲーム
     url: /games 
     desc: いい個人サイトにはちょっとしたゲームがあるといいよね。
+  - title: ブログ
+    url: /blog
+    desc: 定期的に書きたいわな。

@@ -1,9 +1,7 @@
 ---
 title: 500mLのホームページ
-layout: layouts/base.njk
+layout: layouts/index.njk
 ---
-
-# {{ title }}
 
 どうも。
 
@@ -13,13 +11,13 @@ layout: layouts/base.njk
 
 ---
 
-### ☆更新履歴☆
+<h3 class="align-center"> ☆更新履歴☆ </h3>
 
 TBA
 
 ---
 
-### ☆コンテンツ☆
+<h3 class="align-center"> ☆コンテンツ☆ </h3>
 
 <div>
   <ul>

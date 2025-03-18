@@ -3,8 +3,6 @@ title: ポートフォリオ
 layout: layouts/base.njk
 ---
 
-## {{ title }}
-
 {% for work in works.works %}
 
 <div class="works-container" width="100%">

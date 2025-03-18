@@ -63,7 +63,7 @@ body {
   margin-left: 14.5rem;
 }
 
-h1, h2, h3, h4, h5, h6, .align-center {
+.align-center {
   text-align: center;
 }
 
@@ -118,4 +118,22 @@ tr td {
 .works-desc {
   margin-top: 1rem;
   margin-left: 1rem;
+}
+
+img {
+  object-fit: contain;
+  max-width: 100%;
+}
+
+.pagination {
+  display: flex; /* 横並びにする */
+  justify-content: space-between; /* 左右に寄せる */
+}
+
+.pagination-prev {
+  text-align: left; /* 左寄せ */
+}
+
+.pagination-next {
+  text-align: right; /* 右寄せ */
 }

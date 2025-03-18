@@ -3,14 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
   <title>500mLのホームページ</title>
-  <link rel="stylesheet" href="/css/styles.css">
+
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
   <div id="container">
     <aside id="menu">
       <div>
-        <h2>500mL</h2>
+        <h2 class="align-center">500mL</h2>
 
 <a href="/"><img width="100%" src="/img/gohya_syoumeisyasin.png"></a>
 
@@ -25,6 +27,8 @@
       <tr><td><a href=/gallery>絵とか</a></td></tr>
     
       <tr><td><a href=/games>ゲーム</a></td></tr>
+    
+      <tr><td><a href=/blog>ブログ</a></td></tr>
     
   </tbody>
 </table>
@@ -41,15 +45,17 @@
     <img src="/img/Hamburger_icon.svg"> 
     </div>
     <div id="content">
-      <h1>500mLのホームページ</h1>
-<p>どうも。</p>
+      
+  <h1 class="align-center"> 500mLのホームページ </h1>
+
+      <p>どうも。</p>
 <p><em>&quot;萌え命&quot;</em></p>
 <p>500mLです。</p>
 <hr>
-<h3>☆更新履歴☆</h3>
+<h3 class="align-center"> ☆更新履歴☆ </h3>
 <p>TBA</p>
 <hr>
-<h3>☆コンテンツ☆</h3>
+<h3 class="align-center"> ☆コンテンツ☆ </h3>
 <div>
   <ul>
 <p><li type="square"><a href=/about>自己紹介</a></li>
@@ -60,13 +66,17 @@
 絵とか描いたらここに載せようかな。</p>
 <p><li type="square"><a href=/games>ゲーム</a></li>
 いい個人サイトにはちょっとしたゲームがあるといいよね。</p>
+<p><li type="square"><a href=/blog>ブログ</a></li>
+定期的に書きたいわな。</p>
   </ul>
 </div>
-      <hr />
+      
+        <hr />
 <div class="footer-container">
     <p>© 2025 500mL All rights reserved.</p>
     <a href="/">トップページに戻る</a>
 </div>
+      
     </div>
   </div>
   <script>
@@ -75,7 +85,6 @@
       const currentMenuOpen = menu.classList.contains('menuOpen');
       const newMenuOpen = !currentMenuOpen;
 
-      // メニューの状態に応じて表示を切り替える
       if (newMenuOpen) {
         menu.classList.add('menuOpen');
         content.classList.add('menuOpen');
