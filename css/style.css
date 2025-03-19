@@ -138,3 +138,7 @@ img {
 .pagination-next {
   text-align: right; /* 右寄せ */
 }
+
+iframe, blockquote {
+  max-width: 100%;
+}
