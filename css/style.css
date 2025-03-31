@@ -74,6 +74,7 @@ img.align-center {
 }
 
 table.align-center{
+  text-align: left;
   margin: auto;
 }
 
@@ -85,18 +86,20 @@ table.align-center{
   font-size: 0.7rem;
 }
 
-tr {
+aside tr {
   text-align: center;
 }
 
 tr th {
   border: darkblue solid 1px;
   background-color: #c5baff;
+  padding: 0 1rem;
 }
 
 tr td {
   border: darkblue solid 1px;
   background-color: #fbfbfb;
+  padding: 0 1rem;
 }
 
 .works-container {
