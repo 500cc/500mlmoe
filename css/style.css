@@ -73,6 +73,10 @@ img.align-center {
   margin: 0 auto;
 }
 
+table.align-center{
+  margin: auto;
+}
+
 .footer-container {
   text-align: center;
 }
@@ -85,7 +89,8 @@ tr {
   text-align: center;
 }
 
-tr:first-child td {
+tr th {
+  border: darkblue solid 1px;
   background-color: #c5baff;
 }
 
