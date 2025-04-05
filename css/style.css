@@ -73,6 +73,11 @@ img.align-center {
   margin: 0 auto;
 }
 
+table.align-center{
+  text-align: left;
+  margin: auto;
+}
+
 .footer-container {
   text-align: center;
 }
@@ -81,17 +86,20 @@ img.align-center {
   font-size: 0.7rem;
 }
 
-tr {
+aside tr {
   text-align: center;
 }
 
-tr:first-child td {
+tr th {
+  border: darkblue solid 1px;
   background-color: #c5baff;
+  padding: 0 1rem;
 }
 
 tr td {
   border: darkblue solid 1px;
   background-color: #fbfbfb;
+  padding: 0 1rem;
 }
 
 .works-container {
