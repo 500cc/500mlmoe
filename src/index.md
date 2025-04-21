@@ -13,7 +13,14 @@ layout: layouts/index.njk
 
 <h3 class="align-center"> ☆更新履歴☆ </h3>
 
-TBA
+<ul>
+  {% for post in collections.blog limit:5 %}
+    <li type="square">
+      <a href="{{ post.url }}">{{ post.data.title }}</a>
+      <small>({{ post.data.date | dateDisplay }})</small>
+    </li>
+  {% endfor %}
+</ul>
 
 ---
 
