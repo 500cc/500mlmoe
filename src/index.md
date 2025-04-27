@@ -22,6 +22,8 @@ layout: layouts/index.njk
   {% endfor %}
 </ul>
 
+<p class="align-center"> RSSフィードはこちら→<a href="/feed.xml">◆</a></p>
+
 ---
 
 <h3 class="align-center"> ☆コンテンツ☆ </h3>

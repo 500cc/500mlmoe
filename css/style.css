@@ -151,3 +151,35 @@ img {
 iframe, blockquote {
   max-width: 100%;
 }
+
+.link-container {
+  display: grid;
+  grid-template-columns: auto 1fr; /* 画像とタイトルの列の幅の比率 */
+  grid-template-rows: auto auto;
+  width: 80%;
+  padding: 1px;
+  border: darkblue solid 1px;
+  margin: 0 auto;
+}
+
+.link-container .grid-item {
+  margin: 2px;
+  padding: 5px;
+  outline: darkblue solid 1px;
+}
+
+.link-container img {
+  grid-column: 1;
+  grid-row: 1;
+  width: 200px;
+  height: auto;
+}
+
+.link-container .bannerless {
+  grid-column: 1 / span 2;
+}
+
+.link-container p.comment {
+  grid-column: 1 / span 2; /* コメントを2列にまたがって表示 */
+  grid-row: 2;
+}
