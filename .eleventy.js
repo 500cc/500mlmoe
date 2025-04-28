@@ -2,6 +2,8 @@ const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
 
+const striptags = require('striptags');
+
 module.exports = function (eleventyConfig) {
   eleventyConfig.addDataExtension("yml, yaml", (contents) => yaml.load(contents));
 
@@ -11,6 +13,15 @@ module.exports = function (eleventyConfig) {
 
   eleventyConfig.addFilter("dateDisplay", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
+  });
+
+  eleventyConfig.addFilter("getDescription", (content, maxLength = 160) => {
+    const text = striptags(content);
+    if (text.length > maxLength) {
+      return text.substring(0, maxLength) + "…";
+    } else {
+      return text;
+    }
   });
 
   eleventyConfig.addCollection("blog", function(collectionApi) {
