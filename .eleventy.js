@@ -1,7 +1,9 @@
 const yaml = require("js-yaml");
 const { DateTime } = require("luxon");
 const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
-
+const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
+const markdownIt = require('markdown-it');
+const markdownItKatex = require('markdown-it-katex');
 const striptags = require('striptags');
 
 module.exports = function (eleventyConfig) {
@@ -10,6 +12,22 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("img");
   eleventyConfig.addPassthroughCopy("css");
   eleventyConfig.addPassthroughCopy("favicon.ico");
+
+  let markdownLib = markdownIt({
+    html: true,
+    breaks: true,
+    linkify: true
+  }).use(markdownItKatex, {
+    throwOnError: false,
+    strict: false
+  });
+
+  eleventyConfig.setLibrary("md", markdownLib);
+
+  eleventyConfig.addPassthroughCopy({
+    "node_modules/katex/dist/katex.min.css": "css/katex.min.css",
+    "node_modules/katex/dist/fonts": "css/fonts"
+  });
 
   eleventyConfig.addFilter("dateDisplay", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
@@ -49,6 +67,8 @@ module.exports = function (eleventyConfig) {
 			}
 		}
 	});
+
+  eleventyConfig.addPlugin(eleventyNavigationPlugin);
 
   return {
     dir: {

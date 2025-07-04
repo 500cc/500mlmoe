@@ -14,6 +14,9 @@ contents:
   - title: ブログ
     url: /blog
     desc: 定期的に書きたいわな。
+  - title: ノート
+    url: /notes
+    desc: ブログよりも保存価値のある情報を溜めてます。
   - title: リンク集
     url: /links
     desc: 世界のリンクが、ここに集結してます。

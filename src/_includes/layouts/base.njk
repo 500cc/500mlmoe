@@ -6,6 +6,7 @@
   {% block pageTitle %}
     <title>{{ title }} - 500mLのホームページ</title>
   {% endblock %}
+  <link rel="stylesheet" href="/css/katex.min.css">
   <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
@@ -20,9 +21,11 @@
     </div>
     <div id="content">
       {% block title %}
-        <h2 class="align-center">{{ title }}</h2>
+        <h1 class="align-center">{{ title }}</h1>
       {% endblock %}
-      {{ content | safe }}
+      <article>
+        {{ content | safe }}
+      </article>
       {% block footer %}
         {% include "./components/footer.njk" %}
       {% endblock %}

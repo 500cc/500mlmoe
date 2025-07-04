@@ -24,6 +24,7 @@ body {
   background-color: #e8f9ff;
   transform: translateX(-14rem);
   transition: transform 0.3s ease-in-out;
+  z-index: 500;
 }
 
 #menu.menuOpen {
@@ -182,4 +183,51 @@ iframe, blockquote {
 .link-container p.comment {
   grid-column: 1 / span 2; /* コメントを2列にまたがって表示 */
   grid-row: 2;
+}
+
+.tree-view, .tree-view ul {
+  list-style: none; /* リストの記号を非表示 */
+  margin: 0;
+  padding: 0;
+}
+
+.tree-view li {
+  position: relative; /* 擬似要素の配置基準 */
+  line-height: 1.5; /* 行の高さ調整 */
+  padding-left: 1.5em; /* 罫線とテキストのスペース */
+}
+
+/* 各liの左側に横線を描画 */
+.tree-view ul li::before {
+  content: "";
+  position: absolute;
+  left: 0em; /* 縦線が通るX座標 */
+  top: 0.75em; /* 横線が通るY座標 (line-heightの半分) */
+  width: 1em; /* 横線の長さ */
+  height: 0; /* 横線なので高さは0 */
+  border-bottom: 1px solid black; /* 横線 */
+}
+
+.tree-view li::after {
+  content: "";
+  position: absolute;
+  left: 0em; /* 縦線が通るX座標 */
+  top: 0em; /* liの上端から開始 (上のliの横線から繋がるように) */
+  height: calc(100% + 0.75em); /* liの全高 + 上への伸び */
+  border-left: 1px solid black;
+}
+
+/* 最後のliの縦線（└ の形。下へは伸びず、上へだけ伸びる） */
+.tree-view li:last-child::after {
+  height: 0.75em; /* 上への伸びだけ */
+}
+
+/* 一番外側のulのliには、上への縦線がないので、::after を非表示にする */
+.tree-view > li::after {
+  display: none;
+}
+
+/* 各階層のULにインデントを適用 */
+.tree-view ul {
+  padding-left: 0; /* liのpadding-leftと同じ値にすると、縦線が揃う */
 }

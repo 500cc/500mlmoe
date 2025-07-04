@@ -15,9 +15,7 @@ layout: layouts/index.njk
 
 <ul>
   {% for post in collections.blog limit:5 %}
-    <li type="square">
-      <a href="{{ post.url }}">{{ post.data.title }}</a>
-      <small>({{ post.data.date | dateDisplay }})</small>
+    <li type="square"> <a href="{{ post.url }}">{{ post.data.title }}</a> <small>({{ post.data.date | dateDisplay }})</small>
     </li>
   {% endfor %}
 </ul>

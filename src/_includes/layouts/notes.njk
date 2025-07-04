@@ -1,0 +1,40 @@
+{% extends "layouts/base.njk" %}
+
+{% block pageTitle %}
+    <title>ノート/{{ title }} - 500mLのホームページ</title>
+{% endblock %}
+
+{% block title %}
+    <h1 class="align-center">{{ title }}</h1>
+    {% set crumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: true }) %}
+    
+    {% for crumb in crumbs %}
+        {% if page.url === crumb.url %} 
+            {{ crumb.title }}
+        {%- else -%}
+                    <a class="crumb" href="{{ crumb.url | url }}">{{ crumb.title }}</a> »
+        {%- endif -%}
+    {% endfor %}
+    <hr>
+{% endblock %}
+
+{% block footer %}
+    {% set nav = collections.all | eleventyNavigation(eleventyNavigation.key) %}
+
+    {% if nav.length > 0  %} 
+        <h3>目次</h3>
+
+        <ul class="tree-view">
+            <li>
+                {{ nav | eleventyNavigationToHtml | safe}}
+            </li>
+        </ul>
+    {%- endif -%}
+
+    <hr/>
+    <div class="footer-container">
+        <img src="/img/banner.gif">
+        <p>⑤ 2025 500mL No rights reserved.</p>
+        <a href="/notes/">ノートトップに戻る</a>
+    </div>
+{% endblock %}

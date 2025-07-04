@@ -8,10 +8,7 @@ pagination:
 
 <ul>
   {% for post in pagination.items %}
-    <li type="square">
-      <a href="{{ post.url }}">{{ post.data.title }}</a>
-      <small>({{ post.data.date | dateDisplay }})</small>
-    </li>
+    <li type="square"><a href="{{ post.url }}">{{ post.data.title }}</a> <small>({{ post.data.date | dateDisplay }})</small></li>
   {% endfor %}
 </ul>
 
