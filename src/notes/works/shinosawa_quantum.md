@@ -323,7 +323,7 @@ $$-2\sqrt2 \leq C \leq 2\sqrt2$$
     (新版). サイエンス社.
 
 2.  清水明. (2006年). EPRパラドックスからベルの不等式へ.
-    https://as2.c.u-tokyo.ac.jp/lecture\_note/kstext04\_ohp.pdf
+    https://as2.c.u-tokyo.ac.jp/lecture_note/kstext04_ohp.pdf
     （2024年10月8日閲覧）
 
 3.  Physics Lab. 2021. (2021年). 局所実在論とベルの不等式.
