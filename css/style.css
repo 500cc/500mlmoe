@@ -37,6 +37,8 @@ body {
   margin-left: 0;
   transition: margin-left 0.3s ease-in-out;
   overflow-wrap: anywhere;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 #content.menuOpen {
@@ -230,4 +232,17 @@ iframe, blockquote {
 /* 各階層のULにインデントを適用 */
 .tree-view ul {
   padding-left: 0; /* liのpadding-leftと同じ値にすると、縦線が揃う */
+}
+
+.katex-display {
+  overflow-x: auto; /* 横方向にはみ出したらスクロールバーを表示 */
+  -webkit-overflow-scrolling: touch; /* iOSでのスクロールをスムーズに */
+  padding-bottom: 1em;
+}
+
+.shade-box {
+  border: solid black 1px;
+  margin: 1em;
+  padding: 1em;
+  box-shadow: 0.2em 0.2em 0em 0em black;
 }
