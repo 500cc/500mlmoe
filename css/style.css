@@ -31,6 +31,10 @@ body {
   transform: translateX(0);
 }
 
+article > * {
+  line-height: 1.5;
+}
+
 #content {
   flex: 1;
   padding: 2rem;
