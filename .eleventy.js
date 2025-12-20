@@ -4,6 +4,7 @@ const { feedPlugin } = require("@11ty/eleventy-plugin-rss");
 const eleventyNavigationPlugin = require("@11ty/eleventy-navigation");
 const markdownIt = require('markdown-it');
 const markdownItKatex = require('markdown-it-katex');
+const markdownItDeflist = require('markdown-it-deflist');
 const markdownItFootnote = require('markdown-it-footnote');
 const striptags = require('striptags');
 
@@ -19,7 +20,7 @@ module.exports = function (eleventyConfig) {
     breaks: true,
     linkify: true
   }).use(markdownItFootnote
-  ).use(markdownItKatex, {
+  ).use(markdownItDeflist).use(markdownItKatex, {
     throwOnError: false,
     strict: false
   });
