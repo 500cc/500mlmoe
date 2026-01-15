@@ -5,6 +5,9 @@ contents:
   - title: ポートフォリオ
     url: /portfolio
     desc: 外部に発表したものとかを載せてるよ。
+  - title: メタ・ストア
+    url: /meta-store
+    desc: メタ・ストアです。ストアのメタです。
   - title: 絵とか
     url: /gallery
     desc: 絵とか描いたらここに載せようかな。

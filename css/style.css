@@ -250,3 +250,16 @@ iframe, blockquote {
   padding: 1em;
   box-shadow: 0.2em 0.2em 0em 0em black;
 }
+
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+@media (min-width: 768px) {
+    .item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(18em, 1fr));
+    gap: 1em;
+  }
+}

@@ -32,6 +32,10 @@ module.exports = function (eleventyConfig) {
     "node_modules/katex/dist/fonts": "css/fonts"
   });
 
+  eleventyConfig.addFilter("comma", function(value) {
+    return Number(value).toLocaleString();
+  });
+
   eleventyConfig.addFilter("dateDisplay", (dateObj) => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);
   });
