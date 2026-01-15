@@ -1,14 +1,14 @@
 items:
-  - title: "篠澤広に物理学を解説してもらう合同Ⅱ"
-    date: 2025-12-31
-    img: /img/shinosawabutsuri2.jpg
-    price: 3080
-    store: メロンブックス
-    url: https://www.melonbooks.co.jp/detail/detail.php?product_id=3414159
-
-  - title: "篠澤広に物理学を解説してもらう合同"
+  - title: 篠澤広に物理学を解説してもらう合同
     date: 2024-12-14
     img: /img/shinosawabutsuri.jpg
     price: 1980
     store: メロンブックス
     url: https://www.melonbooks.co.jp/detail/detail.php?product_id=2709541
+    
+  - title: 篠澤広に物理学を解説してもらう合同Ⅱ
+    date: 2025-12-31
+    img: /img/shinosawabutsuri2.jpg
+    price: 3080
+    store: メロンブックス
+    url: https://www.melonbooks.co.jp/detail/detail.php?product_id=3414159
